@@ -96,7 +96,7 @@ export const BalanceCard = () => {
     <div className={cardClasses}>
       <span className='text-2xl font-bold'>Balance</span>
       <span className='text-6xl'>${formatCurrency(balance?.balance)}</span>
-      <MakePaymentPopup />
+      <MakePaymentPopup getBalance={getBalance} />
     </div>
   )
 }

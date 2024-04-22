@@ -10,7 +10,10 @@ import { Popover } from '@headlessui/react'
 import { CurrencyDollarIcon } from '@heroicons/react/16/solid'
 import axios from 'axios'
 
-export const MakePaymentPopup = () => {
+export const MakePaymentPopup = (props) => {
+  const { getBalance } = props
+  console.log(getBalance)
+
   const [amount, setAmount] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -56,6 +59,7 @@ export const MakePaymentPopup = () => {
 
       setSuccess(true)
       setTimeout(() => setSuccess(false), 3000)
+      // setTimeout(() => getBalance(), 10000)
       setAmount('')
       setError('')
     } catch (err) {
