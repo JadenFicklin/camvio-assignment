@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --theme-50: 33deg 100% 96%;
+    --theme-100: 34deg 100% 92%;
+    --theme-200: 32deg 98% 83%;
+    --theme-300: 31deg 97% 72%;
+    --theme-400: 27deg 96% 61%;
+    --theme-500: 25deg 95% 53%;
+    --theme-600: 21deg 90% 48%;
+    --theme-700: 17deg 88% 40%;
+    --theme-800: 15deg 79% 34%;
+    --theme-900: 17deg 75% 28%;
+    --theme-950: 13deg 81% 15%;
+  }
+
+  body {
+    @apply bg-white font-quicksand;
+    @apply selection:bg-theme-400 selection:text-white text-neutral-900;
+    @apply bg-[url(../assets/background.jpg)] bg-cover;
+  }
+
+  #root {
+    @apply h-dvh flex flex-col;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply font-quicksand;
+  }
+}
+
+@layer utilities {
+  .ringed {
+    @apply ring-2 ring-theme-500 ring-offset-2 ring-offset-white;
+  }
+}
