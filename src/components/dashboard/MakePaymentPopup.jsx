@@ -71,11 +71,6 @@ export const MakePaymentPopup = () => {
     }
   }
 
-  const inputProps = {
-    value: amount,
-    onChange: (e) => setAmount(e.target.value),
-  }
-
   return (
     <div>
       <Popover className='relative'>
@@ -83,7 +78,7 @@ export const MakePaymentPopup = () => {
           <CurrencyDollarIcon className='size-4' />
           <span>Make a payment</span>
         </Popover.Button>
-        <PopoverPanel className='left-0 right-auto gap-3 flex flex-col w-64'>
+        <PopoverPanel className='left-0 right-auto flex flex-col w-64 gap-3'>
           <Input
             label='amount'
             value={amount}

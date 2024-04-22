@@ -54,6 +54,14 @@ export const BalanceCard = () => {
     }
   }
 
+  function formatCurrency(balance) {
+    return Number(balance).toLocaleString('en-US', {
+      style: 'decimal',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })
+  }
+
   useEffect(() => {
     getBalance()
   }, [])
@@ -87,7 +95,7 @@ export const BalanceCard = () => {
   return (
     <div className={cardClasses}>
       <span className='text-2xl font-bold'>Balance</span>
-      <span className='text-6xl'>${balance?.balance}</span>
+      <span className='text-6xl'>${formatCurrency(balance?.balance)}</span>
       <MakePaymentPopup />
     </div>
   )
